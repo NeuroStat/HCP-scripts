@@ -1,0 +1,25 @@
+### info over de HCP data
+* via https://db.humanconnectome.org kun je de excel of csv file downloaden met alle informatie
+* deze informatie laat toe om een aantal filters in te stellen zodat je een finale file kunt overhouden
+* evt kan dat met het selectCol1.R - een heel triviaal R bestandje.
+
+
+### data download via amazon [enkel lokaal getest, niet op de HPC]
+
+1) noodzakelijke AWS command line tools
+http://docs.aws.amazon.com/cli/latest/userguide/installing.html#install-bundle-other-os
+Installation
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+unzip awscli-bundle.zip
+sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+
+2) configure credentials ( via https://wiki.humanconnectome.org/display/PublicData/How+To+Connect+to+Connectome+Data+via+AWS )
+
+3) configure aws tool  met de verkregen credentials
+
+3) aws copy to local machine
+aws s3 ls s3://hcp-openaccess/HCP_900
+
+aws s3 cp s3://hcp-openaccess/HCP_900/100206/MNINonLinear/Results/tfMRI_MOTOR/tfMRI_MOTOR_hp200_s4_level2.feat/GrayordinatesStats/cope13.feat --recursive
+
+http://www.adliska.com/2016/02/04/how-to-download-human-connectome-project-data-from-amazon-web-services-aws.html
