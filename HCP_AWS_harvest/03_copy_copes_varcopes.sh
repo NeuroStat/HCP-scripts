@@ -24,11 +24,11 @@ for sub in "${Subj[@]}" ; do
   for par in {0..6}; do
 
     for con in $(seq 1 ${ConsList[par]}); do
-      RemoteFileCope=s3://hcp-openaccess/HCP_900/$Subj\/MNINonLinear/Results/tfMRI_${ParsList[par]}\/tfMRI_${ParsList[par]}\_hp200_s4_level2vol.feat/cope$con\.feat/stats/cope1.nii.gz
-      LocalFileCope=$SubDir\/$Subj\_${ParsList[par]}\_$con\_cope.nii.gz
+      RemoteFileCope=s3://hcp-openaccess/HCP_900/$sub\/MNINonLinear/Results/tfMRI_${ParsList[par]}\/tfMRI_${ParsList[par]}\_hp200_s4_level2vol.feat/cope$con\.feat/stats/cope1.nii.gz
+      LocalFileCope=$SubDir\/$sub\_${ParsList[par]}\_$con\_cope.nii.gz
       s3cmd get $RemoteFileCope $LocalFileCope
-      RemoteFileVarCope=s3://hcp-openaccess/HCP_900/$Subj\/MNINonLinear/Results/tfMRI_${ParsList[par]}\/tfMRI_${ParsList[par]}\_hp200_s4_level2vol.feat/cope$con\.feat/stats/varcope1.nii.gz
-      LocalFileVarCope=$SubDir\/$Subj\_${ParsList[par]}\_$con\_varcope.nii.gz
+      RemoteFileVarCope=s3://hcp-openaccess/HCP_900/$sub\/MNINonLinear/Results/tfMRI_${ParsList[par]}\/tfMRI_${ParsList[par]}\_hp200_s4_level2vol.feat/cope$con\.feat/stats/varcope1.nii.gz
+      LocalFileVarCope=$SubDir\/$sub\_${ParsList[par]}\_$con\_varcope.nii.gz
       s3cmd get $RemoteFileVarCope $LocalFileVarCope
 
     done
